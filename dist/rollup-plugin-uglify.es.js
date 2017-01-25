@@ -30,8 +30,8 @@ function uglify(options, minifier) {
 			try {
 				var result = minifier(code, options);
 			} catch (error) {
-				console.log(frame(code, error.line, error.col, frameOptions));
-				console.log('Reason: ' + error.message);
+				console.error(frame(code, error.line, error.col, frameOptions));
+				console.error('Reason: ' + error.message);
 				// Throw again so rollup can catch and output as normal
 				throw error;
 			}
